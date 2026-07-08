@@ -1,0 +1,32 @@
+stanowisko:
+  nazwa: Specjalista ds. Marketingu
+  opis: Szukamy osoby do działu marketingu, która zajmie się kampaniami w mediach
+    społecznościowych, content marketingiem i analizą wyników.
+wymagania:
+  minimalne_lata_doswiadczenia: 2
+  umiejetnosci_kluczowe:
+  - nazwa: Social media (Facebook, Instagram, LinkedIn)
+    waga: 5
+  - nazwa: Google Analytics
+    waga: 4
+  - nazwa: Content marketing / copywriting
+    waga: 4
+  - nazwa: Adobe Photoshop lub Canva
+    waga: 2
+  - nazwa: Znajomość angielskiego
+    waga: 3
+  wyksztalcenie_preferowane:
+  - Marketing
+  - Zarządzanie
+  - Dziennikarstwo
+  jezyki_wymagane:
+  - polski
+  jezyki_mile_widziane:
+  - angielski
+ocena:
+  prog_rekomendacji: 65
+  tryb_filtrowania: zbalansowany
+  wskazowki_dla_ai: Oceniaj przede wszystkim dopasowanie doświadczenia i umiejętności
+    do wymagań powyżej. Premiuj konkretne, mierzalne osiągnięcia (np. "zwiększyłem
+    zasięgi o 40%") ponad ogólnikowe opisy. Bądź surowy wobec CV bez żadnego doświadczenia
+    w branży.

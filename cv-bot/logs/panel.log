@@ -1,0 +1,416 @@
+[2026-07-06T05:20:22.851182] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 05:20:24] "GET / HTTP/1.1" 200 -
+[2026-07-06T05:25:32.213418] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 05:25:33] "GET / HTTP/1.1" 200 -
+[2026-07-06T05:25:54.128466] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 05:25:55] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:30:01] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:30:01] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 05:30:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:30:03] "GET /static/icon.ico HTTP/1.1" 304 -
+[2026-07-06T05:30:12.909542] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 05:30:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:30:21] "POST /uruchom HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 05:30:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:30:24] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:30:28] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:30:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:30:28] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 05:37:58] "GET /ustawienia HTTP/1.1" 200 -
+[2026-07-06T05:38:40.719445] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 05:38:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:38:55] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:41:49] "POST /ustawienia HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 05:41:49] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:42:38] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:42:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:42:40] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 05:43:59] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:44:14] "GET / HTTP/1.1" 200 -
+[2026-07-06T05:48:22.167187] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 05:48:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:48:28] "POST /kandydaci/1/rezerwa HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 05:48:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:49:29] "POST /uruchom HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 05:49:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:49:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:49:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:49:38] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:49:38] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:49:38] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 05:49:54] "POST /kandydaci/3/usun HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 05:49:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:52:18] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 05:52:36] "GET / HTTP/1.1" 200 -
+[2026-07-06T05:57:27.167862] Panel juz dziala - otwieram przegladarke do http://127.0.0.1:5000
+127.0.0.1 - - [06/Jul/2026 05:57:27] "GET / HTTP/1.1" 200 -
+[2026-07-06T05:57:59.789788] Panel juz dziala - otwieram przegladarke do http://127.0.0.1:5000
+127.0.0.1 - - [06/Jul/2026 05:57:59] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 06:00:13] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 06:00:24] "GET / HTTP/1.1" 200 -
+[2026-07-06T06:02:35.162328] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 06:02:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 06:02:50] "POST /auto-sprawdzanie/wlacz HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 06:02:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 06:02:53] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 06:02:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 06:02:53] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 06:03:19] "POST /auto-sprawdzanie/wylacz HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 06:03:19] "GET / HTTP/1.1" 200 -
+[2026-07-06T06:08:04.872150] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 06:08:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 06:09:32] "POST /kandydaci/1/usun HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 06:09:32] "GET / HTTP/1.1" 200 -
+[2026-07-06T06:16:11.211515] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 06:16:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 06:16:18] "GET /pobierz/excel HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 06:17:36] "POST /kandydaci/2/rezerwa HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 06:17:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 06:17:38] "POST /kandydaci/2/przywroc HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 06:17:38] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 06:17:57] "POST /kandydaci/2/usun HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 06:17:57] "GET / HTTP/1.1" 200 -
+[2026-07-06T06:46:02.583809] Panel juz dziala - otwieram przegladarke do http://127.0.0.1:5000
+127.0.0.1 - - [06/Jul/2026 06:46:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 06:46:16] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 06:46:20] "GET / HTTP/1.1" 200 -
+[2026-07-06T06:59:27.683042] Panel juz dziala - otwieram przegladarke do http://127.0.0.1:5000
+127.0.0.1 - - [06/Jul/2026 06:59:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 06:59:33] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:00:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:09:57] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:09:59] "GET / HTTP/1.1" 200 -
+[2026-07-06T07:13:52.035686] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 07:13:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:13:55] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:13:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:13:58] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:13:59] "GET / HTTP/1.1" 200 -
+[2026-07-06T07:23:03.883142] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 07:23:05] "GET / HTTP/1.1" 200 -
+[2026-07-06T07:29:26.502893] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 07:29:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:29:35] "GET / HTTP/1.1" 200 -
+[2026-07-06T07:29:51.115591] Panel juz dziala - otwieram przegladarke do http://127.0.0.1:5000
+127.0.0.1 - - [06/Jul/2026 07:29:51] "GET / HTTP/1.1" 200 -
+[2026-07-06T07:34:45.409373] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 07:34:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:34:53] "POST /uruchom HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 07:34:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:34:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:34:59] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:35:02] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:35:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:35:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:35:05] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 07:36:04] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:36:33] "GET / HTTP/1.1" 200 -
+[2026-07-06T07:49:44.626911] Panel juz dziala - otwieram przegladarke do http://127.0.0.1:5000
+127.0.0.1 - - [06/Jul/2026 07:49:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:49:59] "POST /kandydaci/4/rezerwa HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 07:49:59] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:50:01] "POST /kandydaci/4/przywroc HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 07:50:01] "GET / HTTP/1.1" 200 -
+[2026-07-06T07:55:14.674423] Panel juz dziala - otwieram przegladarke do http://127.0.0.1:5000
+127.0.0.1 - - [06/Jul/2026 07:55:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:55:34] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:55:34] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 07:55:37] "GET / HTTP/1.1" 200 -
+[2026-07-06T08:00:21.833766] Panel juz dziala - otwieram przegladarke do http://127.0.0.1:5000
+127.0.0.1 - - [06/Jul/2026 08:00:21] "GET / HTTP/1.1" 200 -
+[2026-07-06T08:07:17.049073] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 08:07:18] "GET / HTTP/1.1" 200 -
+[2026-07-06T08:27:47.698487] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 08:27:48] "GET / HTTP/1.1" 200 -
+[2026-07-06T08:29:31.761050] Panel juz dziala - otwieram przegladarke do http://127.0.0.1:5000
+127.0.0.1 - - [06/Jul/2026 08:29:31] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 08:29:50] "POST /kandydaci/4/rezerwa HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 08:29:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 08:29:54] "POST /kandydaci/4/przywroc HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 08:29:54] "GET / HTTP/1.1" 200 -
+[2026-07-06T08:34:36.340479] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 08:34:37] "GET / HTTP/1.1" 200 -
+[2026-07-06T08:53:28.725018] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 08:53:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 08:53:29] "GET /static/chart.min.js HTTP/1.1" 200 -
+[2026-07-06T08:59:59.652807] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 09:00:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:00:00] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:00:24] "GET /?zakres=7 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:00:24] "GET /static/chart.min.js HTTP/1.1" 304 -
+[2026-07-06T09:06:13.844485] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 09:06:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:06:15] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:06:54] "GET /?zakres=7 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:06:54] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:06:55] "GET /?zakres=wszystko HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:06:55] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:06:57] "GET /?zakres=7 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:06:57] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:07:11] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:07:57] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:07:57] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:08:04] "POST /auto-sprawdzanie/wlacz HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 09:08:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:08:04] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:08:07] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:08:10] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:08:13] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:08:16] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:08:19] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:08:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:08:19] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:08:19] "GET /static/icon.ico HTTP/1.1" 304 -
+[2026-07-06T09:37:01.552937] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 09:37:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:37:02] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:37:02] "GET /static/Inter-latin.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:37:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:37:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:37:05] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:37:05] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:37:05] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:37:14] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:37:14] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:37:16] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:37:16] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:37:17] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:37:17] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:37:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:37:19] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:37:19] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:37:36] "POST /kandydaci/4/rezerwa HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 09:37:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:37:36] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:37:36] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:37:39] "POST /kandydaci/4/przywroc HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 09:37:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:37:39] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:37:39] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:40:07] "GET /static/Inter-latin-ext.woff2 HTTP/1.1" 200 -
+[2026-07-06T09:49:56.800847] Panel dostępny pod adresem: http://127.0.0.1:5000
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [06/Jul/2026 09:49:57] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:49:57] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:49:58] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:50:00] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:50:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:50:00] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:50:00] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:50:01] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:50:03] "POST /panel-ai/ustaw HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:50:05] "POST /panel-ai/ustaw HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:50:06] "POST /panel-ai/ustaw HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:50:07] "POST /panel-ai/ustaw HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:50:09] "POST /panel-ai/ustaw HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:50:12] "POST /panel-ai/ustaw HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:50:26] "POST /auto-sprawdzanie/wylacz HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 09:50:26] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:50:26] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:50:26] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:50:34] "GET /static/Inter-latin-ext.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:50:45] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:50:45] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:51:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:51:00] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:51:00] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:51:15] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:51:15] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:53:59] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:53:59] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:53:59] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:54:02] "POST /uruchom HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 09:54:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:54:02] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:54:02] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:54:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:54:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:54:05] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:54:05] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:54:05] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:54:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:54:40] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:54:40] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:54:40] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:54:41] "POST /uruchom HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 09:54:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:54:41] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:54:41] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:54:44] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:54:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:54:44] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:54:44] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:54:44] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:56:24] "POST /uruchom HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 09:56:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:56:24] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:56:24] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:56:27] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:56:30] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:56:33] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:56:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:56:39] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:56:42] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:56:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:56:42] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:56:42] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:56:42] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:59:26] "POST /kandydaci/5/usun HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 09:59:26] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 09:59:26] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:59:26] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 09:59:36] "GET /static/Inter-latin-ext.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:00:29] "POST /uruchom HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 10:00:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:00:29] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:00:29] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:00:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:00:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:00:38] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:00:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:00:44] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:00:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:00:44] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:00:44] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:00:44] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:02:00] "POST /kandydaci/7/usun HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 10:02:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:02:00] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:02:00] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:03:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:03:46] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:03:46] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:03:46] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:03:51] "POST /auto-sprawdzanie/wlacz HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jul/2026 10:03:51] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:03:51] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:03:51] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:03:54] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:03:57] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:04:00] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:04:03] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:04:06] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:04:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:04:06] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:04:06] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:04:06] "GET /static/icon.ico HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:04:22] "GET /pobierz/excel HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:05:03] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:05:03] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:06:18] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:06:18] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:06:18] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+[2026-07-06T10:28:01.961842] Panel juz dziala - otwieram przegladarke do http://127.0.0.1:5000
+127.0.0.1 - - [06/Jul/2026 10:28:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:28:02] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:28:02] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:28:06] "GET /ustawienia HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:28:06] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:28:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 10:28:08] "GET /static/chart.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:28:08] "GET /static/Inter-latin.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jul/2026 10:28:26] "GET /static/Inter-latin-ext.woff2 HTTP/1.1" 304 -

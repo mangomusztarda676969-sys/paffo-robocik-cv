@@ -1,0 +1,525 @@
+{% extends "base.html" %}
+{% block title %}Panel główny - Paffo AI{% endblock %}
+
+{% macro candidate_cards(candidates, reserve, grid_id) %}
+  {% if candidates %}
+  <div class="sort-chips">
+    <span class="sort-chip active" onclick="sortCandidateGrid('{{ grid_id }}', 'ocena', this)">Najwyższa ocena</span>
+    <span class="sort-chip" onclick="sortCandidateGrid('{{ grid_id }}', 'dodano', this)">Najnowsze</span>
+    <span class="sort-chip" onclick="sortCandidateGrid('{{ grid_id }}', 'dopasowanie', this)">Najlepsze dopasowanie</span>
+  </div>
+  <div class="candidate-grid" id="{{ grid_id }}">
+    {% for c in candidates %}
+    {% set ocena = c.ocena or 0 %}
+    {% set u = c.uzasadnienie | parse_uzasadnienie %}
+    {% set dopasowanie = c | dopasowanie_procent(criteria) %}
+    {% set words = (c.imie_nazwisko or "?").split() %}
+    {% set initials = ((words[0][0] if words|length > 0 else "?") ~ (words[1][0] if words|length > 1 else ""))|upper %}
+    {% set avatar_colors = ["#3987e5", "#9085e9", "#22d3ee", "#1fbf4a", "#eb6834"] %}
+    {% set avatar_color = avatar_colors[(c.imie_nazwisko|length) % avatar_colors|length] %}
+    <div class="candidate-card" data-ocena="{{ ocena }}" data-dodano="{{ c.dodano_at or '' }}" data-dopasowanie="{{ dopasowanie or 0 }}">
+      <div class="candidate-card-top">
+        <div class="candidate-avatar" style="background: {{ avatar_color }};">{{ initials }}</div>
+        <div class="candidate-identity">
+          <div class="candidate-name">{{ c.imie_nazwisko }}</div>
+          <div class="candidate-meta">{{ c.email }}</div>
+        </div>
+        <div class="candidate-score-badge {% if ocena >= 70 %}high{% elif ocena >= 40 %}mid{% else %}low{% endif %}" data-count-to="{{ ocena }}">0</div>
+      </div>
+
+      {% if dopasowanie is not none %}
+      <div class="candidate-match">
+        Dopasowanie: {{ dopasowanie }}%
+        <div class="candidate-match-track"><div class="candidate-match-fill" style="width: {{ dopasowanie }}%;"></div></div>
+      </div>
+      {% endif %}
+
+      {% if u.mocne %}
+      <div class="candidate-tags">
+        {% for tag in u.mocne[:3] %}<span class="candidate-tag">{{ tag }}</span>{% endfor %}
+      </div>
+      {% endif %}
+
+      <div>
+        {% if reserve %}
+        <span class="candidate-status-chip reserve">Rezerwowy</span>
+        {% elif u.decyzja in ['zaprosić', 'rekomendowany'] %}
+        <span class="candidate-status-chip accepted">Zaakceptowany</span>
+        {% elif u.decyzja == 'do rozważenia' %}
+        <span class="candidate-status-chip consider">Do rozważenia</span>
+        {% elif u.decyzja %}
+        <span class="candidate-status-chip rejected">Odrzucony</span>
+        {% endif %}
+      </div>
+
+      <button type="button" class="secondary uzasadnienie-toggle" onclick="toggleUzasadnienie(this)">Pokaż uzasadnienie</button>
+      <div class="uzasadnienie-text" hidden>
+        {% if u.decyzja_powod %}<p class="uzasadnienie-decyzja-powod">🤖 {{ u.decyzja_powod }}</p>{% endif %}
+        <p class="uzasadnienie-podsumowanie">{{ u.podsumowanie }}</p>
+        {% if u.mocne %}
+        <div class="uzasadnienie-sekcja">
+          <strong>Mocne strony</strong>
+          <ul class="mocne-strony">{% for punkt in u.mocne %}<li>{{ punkt }}</li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+        {% if u.slabe %}
+        <div class="uzasadnienie-sekcja">
+          <strong>Słabe strony</strong>
+          <ul class="slabe-strony">{% for punkt in u.slabe %}<li>{{ punkt }}</li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+      </div>
+
+      <p class="hint" style="margin-top: 10px;">{{ c.stanowisko }} · {{ c.data_otrzymania }}</p>
+
+      <div class="candidate-footer">
+        {% if reserve %}
+        <form method="post" action="{{ url_for('przywroc_z_rezerwy', candidate_id=c.id) }}">
+          <button type="submit">Przywróć</button>
+        </form>
+        {% else %}
+        <form method="post" action="{{ url_for('przenies_do_rezerwy', candidate_id=c.id) }}">
+          <button type="submit" class="secondary">Do rezerwowych</button>
+        </form>
+        {% endif %}
+        <form method="post" action="{{ url_for('usun_kandydata', candidate_id=c.id) }}"
+              onsubmit="return confirm('Usunąć kandydata {{ c.imie_nazwisko }} CAŁKOWICIE (razem z plikiem CV)? Tej operacji nie da się cofnąć.');">
+          <button type="submit" class="danger">Usuń</button>
+        </form>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="hint">
+    {% if reserve %}Lista rezerwowa jest pusta.{% else %}Jeszcze brak kandydatów w bazie - uruchom bota, żeby sprawdzić pocztę.{% endif %}
+  </p>
+  {% endif %}
+{% endmacro %}
+
+{% block content %}
+
+<div class="card">
+  <h2>Sterowanie</h2>
+  <p>
+    <span class="status-dot {% if running %}running{% endif %}"></span>
+    {% if running %}
+      Bot właśnie sprawdza pocztę w tle...
+    {% else %}
+      Bot jest bezczynny - gotowy do uruchomienia.
+    {% endif %}
+  </p>
+  <div class="row">
+    <form method="post" action="{{ url_for('uruchom') }}">
+      <button type="submit" {% if running %}disabled{% endif %}>Uruchom teraz</button>
+    </form>
+    {% if auto_check_enabled %}
+    <form method="post" action="{{ url_for('wylacz_auto_sprawdzanie') }}">
+      <button type="submit" class="secondary">⏸ Wyłącz automatyczne sprawdzanie (co 30 min)</button>
+    </form>
+    {% else %}
+    <form method="post" action="{{ url_for('wlacz_auto_sprawdzanie') }}">
+      <button type="submit">▶ Włącz automatyczne sprawdzanie co 30 min</button>
+    </form>
+    {% endif %}
+    {% if excel_exists %}
+    <a class="btn secondary" href="{{ url_for('pobierz_excel') }}">⬇ Pobierz plik Excel</a>
+    {% endif %}
+    {% if google_sheet_url %}
+    <a class="btn secondary" href="{{ google_sheet_url }}" target="_blank" rel="noopener noreferrer">↗ Otwórz w Google Sheets</a>
+    {% endif %}
+  </div>
+</div>
+
+<div class="card ai-control-card">
+  <h2>🎛️ Panel sterowania AI</h2>
+  <p class="hint">Realnie wpływa na to, jak AI ocenia i podejmuje decyzję o kolejnych CV - nie zmienia decyzji już ocenionych kandydatów.</p>
+
+  {% set ocena_cfg = criteria.get('ocena', {}) %}
+  <div class="ai-control-row">
+    <div class="ai-control-block">
+      <div class="ai-control-label-row">
+        <label>Próg auto-akceptacji</label>
+        <span class="ai-control-value" id="progValue">{{ ocena_cfg.get('prog_rekomendacji', 65) }}</span>
+      </div>
+      <input type="range" min="0" max="100" step="1" id="progSlider"
+             value="{{ ocena_cfg.get('prog_rekomendacji', 65) }}"
+             oninput="onProgInput(this.value)" onchange="saveAiControl()">
+      <p class="hint" id="progHint"></p>
+    </div>
+
+    <div class="ai-control-block">
+      <label>Siła filtrowania AI</label>
+      {% set tryb_aktualny = ocena_cfg.get('tryb_filtrowania', 'zbalansowany') %}
+      <div class="segmented" id="trybFiltrowania">
+        <button type="button" class="segmented-btn {% if tryb_aktualny == 'rygorystyczny' %}active{% endif %}" data-value="rygorystyczny" onclick="setTrybFiltrowania(this)">Rygorystyczny</button>
+        <button type="button" class="segmented-btn {% if tryb_aktualny == 'zbalansowany' %}active{% endif %}" data-value="zbalansowany" onclick="setTrybFiltrowania(this)">Zbalansowany</button>
+        <button type="button" class="segmented-btn {% if tryb_aktualny == 'eksploracyjny' %}active{% endif %}" data-value="eksploracyjny" onclick="setTrybFiltrowania(this)">Eksploracyjny</button>
+      </div>
+      <p class="hint" id="trybHint"></p>
+    </div>
+  </div>
+
+  <p class="ai-control-status" id="aiControlStatus">&nbsp;</p>
+</div>
+
+<div class="card">
+  <h2>Kandydaci ({{ candidates|length }})</h2>
+  {{ candidate_cards(candidates, false, 'grid-kandydaci') }}
+</div>
+
+<div class="card">
+  <h2>Lista rezerwowa ({{ reserve_candidates|length }})</h2>
+  <p class="hint">Kandydaci przeniesieni tu ręcznie - nadal widoczni w Excelu/Google Sheets ze statusem "Rezerwowy".</p>
+  {{ candidate_cards(reserve_candidates, true, 'grid-rezerwa') }}
+</div>
+
+<div class="card analytics-card">
+  <div class="analytics-header">
+    <h2>📊 Analityka rekrutacji</h2>
+    <div class="zakres-filter">
+      <a href="{{ url_for('dashboard', zakres=7) }}" class="zakres-link {% if zakres_dni == '7' %}active{% endif %}">Ostatnie 7 dni</a>
+      <a href="{{ url_for('dashboard', zakres=30) }}" class="zakres-link {% if zakres_dni == '30' %}active{% endif %}">Ostatnie 30 dni</a>
+      <a href="{{ url_for('dashboard', zakres='wszystko') }}" class="zakres-link {% if zakres_dni == 'wszystko' %}active{% endif %}">Cały okres</a>
+    </div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="stat-tile stat-blue">
+      <div class="stat-label">Średnia ocena CV</div>
+      <div class="stat-value">{{ analytics.avg_score }}</div>
+    </div>
+    <div class="stat-tile stat-blue">
+      <div class="stat-label">CV przetworzonych</div>
+      <div class="stat-value">{{ analytics.total }}</div>
+    </div>
+    <div class="stat-tile stat-blue">
+      <div class="stat-label">Spełnia wymagania</div>
+      <div class="stat-value">{{ analytics.procent_spelnia|int }}%</div>
+    </div>
+    <div class="stat-tile stat-orange">
+      <div class="stat-label">Nie spełnia wymagań</div>
+      <div class="stat-value">{{ analytics.procent_niedopasowania|int }}%</div>
+    </div>
+  </div>
+
+  <div class="analytics-grid">
+    <div class="analytics-col">
+      <div class="chart-block">
+        <p class="chart-title">Rozkład ocen kandydatów</p>
+        {% if analytics.total %}
+        <div class="chart-wrap chart-wrap-sm"><canvas id="chartRozklad"></canvas></div>
+        {% else %}
+        <p class="hint">Brak danych w wybranym okresie.</p>
+        {% endif %}
+      </div>
+
+      <div class="chart-block">
+        <p class="chart-title">Najczęściej brakujące kompetencje</p>
+        {% if analytics.top_missing %}
+        <ol class="top-missing-list">
+          {% for nazwa, count in analytics.top_missing %}
+          <li><span>{{ nazwa }}</span><span class="badge low">{{ count }}</span></li>
+          {% endfor %}
+        </ol>
+        {% else %}
+        <p class="hint">Za mało danych, żeby wskazać brakujące kompetencje.</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="analytics-col">
+      <div class="chart-block">
+        <p class="chart-title">Trend jakości kandydatów w czasie</p>
+        {% if analytics.trend_labels %}
+        <div class="chart-wrap chart-wrap-sm"><canvas id="chartTrend"></canvas></div>
+        {% else %}
+        <p class="hint">Za mało danych, żeby pokazać trend.</p>
+        {% endif %}
+      </div>
+
+      <div class="chart-block">
+        <p class="chart-title">Decyzja AI - lista rezerwowa ({{ analytics.reserve_total }})</p>
+        {% if analytics.reserve_total %}
+        <div class="chart-wrap chart-wrap-xs"><canvas id="chartRezerwa"></canvas></div>
+        {% else %}
+        <p class="hint">Lista pusta. (Powód przeniesienia nie jest jeszcze zapisywany - tu widać decyzję AI.)</p>
+        {% endif %}
+      </div>
+
+      <div class="insights-box">
+        <p class="insights-title">💡 Wnioski AI</p>
+        <ul>
+          {% for insight in analytics.insights %}
+          <li>{{ insight }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Ostatnie logi</h2>
+  {% if log_tail %}
+  <pre class="log">{{ log_tail }}</pre>
+  {% else %}
+  <p class="hint">Brak logów - bot jeszcze nie był uruchamiany.</p>
+  {% endif %}
+</div>
+
+<script>
+  function toggleUzasadnienie(button) {
+    const textBox = button.nextElementSibling;
+    const isHidden = textBox.hidden;
+    textBox.hidden = !isHidden;
+    button.textContent = isHidden ? 'Ukryj uzasadnienie' : 'Pokaż uzasadnienie';
+  }
+
+  const TRYB_OPIS = {
+    rygorystyczny: 'AI ostrzej ocenia i w razie wątpliwości woli odrzucić niż zaakceptować.',
+    zbalansowany: 'Standardowe podejście - bez dodatkowego zaostrzania ani łagodzenia ocen.',
+    eksploracyjny: 'AI daje kandydatom margines zaufania - w razie wątpliwości woli "do rozważenia" niż odrzucić.',
+  };
+  let trybFiltrowaniaAktualny = document.querySelector('#trybFiltrowania .segmented-btn.active')?.dataset.value || 'zbalansowany';
+
+  function progBandHint(prog) {
+    const dolny = Math.max(prog - 25, 0);
+    return `Od ${prog} pkt: zaprosić. Od ${dolny} pkt: do rozważenia. Poniżej ${dolny} pkt: odrzucić.`;
+  }
+
+  function onProgInput(value) {
+    document.getElementById('progValue').textContent = value;
+    document.getElementById('progHint').textContent = progBandHint(parseInt(value, 10));
+  }
+
+  function setTrybFiltrowania(btn) {
+    document.querySelectorAll('#trybFiltrowania .segmented-btn').forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    trybFiltrowaniaAktualny = btn.dataset.value;
+    document.getElementById('trybHint').textContent = TRYB_OPIS[trybFiltrowaniaAktualny] || '';
+    saveAiControl();
+  }
+
+  async function saveAiControl() {
+    const prog = document.getElementById('progSlider').value;
+    const statusEl = document.getElementById('aiControlStatus');
+    statusEl.textContent = 'Zapisywanie...';
+    statusEl.className = 'ai-control-status saving';
+    try {
+      const res = await fetch("{{ url_for('ustaw_panel_ai') }}", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          prog_rekomendacji: parseInt(prog, 10),
+          tryb_filtrowania: trybFiltrowaniaAktualny,
+        }),
+      });
+      if (!res.ok) throw new Error('bad status');
+      statusEl.textContent = 'Zapisano ✓';
+      statusEl.className = 'ai-control-status ok';
+    } catch (e) {
+      statusEl.textContent = 'Błąd zapisu - spróbuj ponownie.';
+      statusEl.className = 'ai-control-status error';
+    }
+    setTimeout(() => { statusEl.textContent = ' '; statusEl.className = 'ai-control-status'; }, 2500);
+  }
+
+  onProgInput(document.getElementById('progSlider').value);
+  document.getElementById('trybHint').textContent = TRYB_OPIS[trybFiltrowaniaAktualny] || '';
+
+  function sortCandidateGrid(gridId, key, chipEl) {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    const cards = Array.from(grid.children);
+    cards.sort((a, b) => {
+      if (key === 'dodano') {
+        return (b.dataset.dodano || '').localeCompare(a.dataset.dodano || '');
+      }
+      return (parseFloat(b.dataset[key]) || 0) - (parseFloat(a.dataset[key]) || 0);
+    });
+    cards.forEach((card) => grid.appendChild(card));
+    const chipsRow = chipEl.closest('.sort-chips');
+    chipsRow.querySelectorAll('.sort-chip').forEach((el) => el.classList.remove('active'));
+    chipEl.classList.add('active');
+  }
+
+  // Jeśli bot działa w tle, odświeżaj stronę co kilka sekund, aż skończy.
+  (function poll() {
+    const running = {{ 'true' if running else 'false' }};
+    if (!running) return;
+    setTimeout(async () => {
+      try {
+        const res = await fetch("{{ url_for('status') }}");
+        const data = await res.json();
+        if (!data.running) {
+          window.location.reload();
+        } else {
+          poll();
+        }
+      } catch (e) {
+        poll();
+      }
+    }, 3000);
+  })();
+</script>
+
+<script src="{{ url_for('static', filename='chart.min.js') }}"></script>
+<script>
+(function () {
+  const A = {{ analytics | tojson }};
+
+  // Paleta statusów (dobra/ostrzeżenie/poważna/krytyczna) - z systemu wizualizacji
+  // danych: kolor zawsze niesie znaczenie (jakość), nigdy losowa identyfikacja.
+  const KOLOR_DOBRY = "#1fbf4a";
+  const KOLOR_OSTRZEZENIE = "#fab219";
+  const KOLOR_POWAZNY = "#ec835a";
+  const KOLOR_KRYTYCZNY = "#ef5350";
+  const KOLOR_NIEBIESKI = "#3987e5";
+  const KOLOR_TEKST_MUTED = "#83838f";
+  const KOLOR_TEKST = "#f3f3f6";
+  const KOLOR_SIATKA = "rgba(255,255,255,0.08)";
+
+  Chart.defaults.font.family = "'Inter', -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif";
+  Chart.defaults.font.size = 11;
+  Chart.defaults.color = "#b6b6c1";
+
+  // Prosty wtyczka Chart.js - dopisuje wartość na końcu każdego słupka
+  // (zamiast liczby na KAŻDYM punkcie - tu słupków jest mało, 3-4, więc to
+  // czytelne, a nie chaos).
+  const wartoscNaKoncu = {
+    id: "wartoscNaKoncu",
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart;
+      chart.data.datasets.forEach((dataset, di) => {
+        const meta = chart.getDatasetMeta(di);
+        meta.data.forEach((bar, i) => {
+          const value = dataset.data[i];
+          if (value === null || value === undefined) return;
+          ctx.save();
+          ctx.fillStyle = KOLOR_TEKST;
+          ctx.font = "600 11px 'Inter', -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif";
+          if (chart.config.options.indexAxis === "y") {
+            ctx.textAlign = "left";
+            ctx.textBaseline = "middle";
+            ctx.fillText(value, bar.x + 8, bar.y);
+          } else {
+            ctx.textAlign = "center";
+            ctx.textBaseline = "bottom";
+            ctx.fillText(value, bar.x, bar.y - 6);
+          }
+          ctx.restore();
+        });
+      });
+    },
+  };
+
+  const barBaseOptions = {
+    indexAxis: "y",
+    responsive: true,
+    maintainAspectRatio: false,
+    resizeDelay: 100,
+    layout: { padding: { right: 22 } },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: (item) => ` ${item.formattedValue} kandydatów`,
+        },
+      },
+    },
+    scales: {
+      x: {
+        beginAtZero: true,
+        grid: { color: KOLOR_SIATKA, drawTicks: false },
+        border: { display: false },
+        ticks: { precision: 0, color: KOLOR_TEKST_MUTED },
+      },
+      y: {
+        grid: { display: false },
+        border: { display: false },
+        ticks: { color: "#b6b6c1" },
+      },
+    },
+  };
+
+  if (A.total > 0) {
+    new Chart(document.getElementById("chartRozklad"), {
+      type: "bar",
+      data: {
+        labels: A.bucket_labels,
+        datasets: [{
+          data: A.bucket_values,
+          backgroundColor: [KOLOR_DOBRY, KOLOR_OSTRZEZENIE, KOLOR_POWAZNY, KOLOR_KRYTYCZNY],
+          borderRadius: 4,
+          maxBarThickness: 16,
+        }],
+      },
+      options: barBaseOptions,
+      plugins: [wartoscNaKoncu],
+    });
+  }
+
+  if (A.trend_labels && A.trend_labels.length > 0) {
+    new Chart(document.getElementById("chartTrend"), {
+      type: "line",
+      data: {
+        labels: A.trend_labels,
+        datasets: [{
+          label: "Średnia ocena",
+          data: A.trend_values,
+          borderColor: KOLOR_NIEBIESKI,
+          backgroundColor: KOLOR_NIEBIESKI + "26",
+          pointBackgroundColor: KOLOR_NIEBIESKI,
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          borderWidth: 2,
+          fill: true,
+          tension: 0.25,
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        resizeDelay: 100,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (item) => ` Średnia ocena: ${item.formattedValue}`,
+            },
+          },
+        },
+        scales: {
+          x: { grid: { display: false }, border: { display: false }, ticks: { color: KOLOR_TEKST_MUTED } },
+          y: {
+            beginAtZero: true,
+            max: 100,
+            grid: { color: KOLOR_SIATKA, drawTicks: false },
+            border: { display: false },
+            ticks: { color: KOLOR_TEKST_MUTED },
+          },
+        },
+      },
+    });
+  }
+
+  if (A.reserve_total > 0) {
+    new Chart(document.getElementById("chartRezerwa"), {
+      type: "bar",
+      data: {
+        labels: A.reserve_decyzja_labels,
+        datasets: [{
+          data: A.reserve_decyzja_values,
+          backgroundColor: [KOLOR_DOBRY, KOLOR_OSTRZEZENIE, KOLOR_KRYTYCZNY],
+          borderRadius: 4,
+          maxBarThickness: 16,
+        }],
+      },
+      options: barBaseOptions,
+      plugins: [wartoscNaKoncu],
+    });
+  }
+})();
+</script>
+{% endblock %}

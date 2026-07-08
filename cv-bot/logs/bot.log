@@ -1,0 +1,248 @@
+2026-07-06 03:37:16,682 | INFO | ============================================================
+2026-07-06 03:37:16,682 | INFO | Start przetwarzania - 2026-07-06T03:37:16.682322
+2026-07-06 03:37:16,710 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 03:37:17,027 | INFO | Pierwsze uruchomienie na tej skrzynce - pomijam historyczną pocztę sprzed instalacji, ustalam punkt startowy na 'teraz'.
+2026-07-06 03:37:17,045 | INFO | Ustawiono punkt startowy na UID 9731.
+2026-07-06 03:37:17,045 | INFO | Sprawdzam pocztę nowszą niż UID 9731
+2026-07-06 03:37:17,380 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9731)
+2026-07-06 03:37:17,462 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (0 kandydatów)
+2026-07-06 03:37:17,462 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 0. Łącznie w bazie: 0
+2026-07-06 03:42:13,782 | INFO | ============================================================
+2026-07-06 03:42:13,782 | INFO | Start przetwarzania - 2026-07-06T03:42:13.782557
+2026-07-06 03:42:13,785 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 03:42:14,152 | INFO | Sprawdzam pocztę nowszą niż UID 9731
+2026-07-06 03:42:14,511 | INFO | Znaleziono 5 nowych wiadomości do sprawdzenia (od UID 9731)
+2026-07-06 03:42:14,959 | INFO | Pobrano z IMAP: UID=9732 | temat: 'Praca' | od: 'Maksymilian Nowak <mangomusztarda676969@gmail.com>' | załączników CV: 1
+2026-07-06 03:42:15,253 | INFO | Pobrano z IMAP: UID=9733 | temat: 'Podanie o prace' | od: 'Maksymilian Nowak <mangomusztarda676969@gmail.com>' | załączników CV: 1
+2026-07-06 03:42:15,519 | INFO | Pobrano z IMAP: UID=9734 | temat: 'Dzieręń dobry' | od: 'Maksymilian Nowak <mangomusztarda676969@gmail.com>' | załączników CV: 0
+2026-07-06 03:42:15,876 | INFO | Pobrano z IMAP: UID=9735 | temat: 'Podanie o prace' | od: 'Maksymilian Nowak <mangomusztarda676969@gmail.com>' | załączników CV: 1
+2026-07-06 03:42:16,218 | INFO | Pobrano z IMAP: UID=9736 | temat: 'Podanie o prace' | od: 'Maksymilian Nowak <mangomusztarda676969@gmail.com>' | załączników CV: 1
+2026-07-06 03:42:16,292 | INFO | Nowy e-mail od Maksymilian Nowak <mangomusztarda676969@gmail.com> | temat: Praca | załączników CV: 1
+2026-07-06 03:42:16,358 | INFO | Sprawdzanie i ocena przez AI: Mega cv.pdf
+2026-07-06 03:42:22,844 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-06 03:42:22,863 | INFO | Dodano kandydata: Jan Kowalski | ocena: 96
+2026-07-06 03:42:22,876 | INFO | Nowy e-mail od Maksymilian Nowak <mangomusztarda676969@gmail.com> | temat: Podanie o prace | załączników CV: 1
+2026-07-06 03:42:22,896 | INFO | Sprawdzanie i ocena przez AI: cv kasia.pdf
+2026-07-06 03:42:28,240 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-06 03:42:28,247 | INFO | Dodano kandydata: Kasia Nowak | ocena: 15
+2026-07-06 03:42:28,254 | INFO | Nowy e-mail od Maksymilian Nowak <mangomusztarda676969@gmail.com> | temat: Dzieręń dobry | załączników CV: 0
+2026-07-06 03:42:28,259 | INFO | Nowy e-mail od Maksymilian Nowak <mangomusztarda676969@gmail.com> | temat: Podanie o prace | załączników CV: 1
+2026-07-06 03:42:28,259 | INFO | Pomijam duplikat CV: Mega cv.pdf (już wcześniej ocenione)
+2026-07-06 03:42:28,264 | INFO | Nowy e-mail od Maksymilian Nowak <mangomusztarda676969@gmail.com> | temat: Podanie o prace | załączników CV: 1
+2026-07-06 03:42:28,265 | INFO | Pomijam duplikat CV: cv kasia.pdf (już wcześniej ocenione)
+2026-07-06 03:42:28,275 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (2 kandydatów)
+2026-07-06 03:42:28,275 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 2. Łącznie w bazie: 2
+2026-07-06 04:31:03,875 | INFO | ============================================================
+2026-07-06 04:31:03,876 | INFO | Start przetwarzania - 2026-07-06T04:31:03.876085
+2026-07-06 04:31:03,878 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 04:31:04,717 | INFO | Sprawdzam pocztę nowszą niż UID 9736
+2026-07-06 04:31:05,253 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9736)
+2026-07-06 04:31:05,367 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (2 kandydatów)
+2026-07-06 04:31:05,367 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 0. Łącznie w bazie: 2
+2026-07-06 04:31:14,766 | INFO | ============================================================
+2026-07-06 04:31:14,766 | INFO | Start przetwarzania - 2026-07-06T04:31:14.766313
+2026-07-06 04:31:14,769 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 04:31:15,073 | INFO | Sprawdzam pocztę nowszą niż UID 9736
+2026-07-06 04:31:15,442 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9736)
+2026-07-06 04:31:15,521 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (2 kandydatów)
+2026-07-06 04:31:15,521 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 0. Łącznie w bazie: 2
+2026-07-06 04:42:22,733 | INFO | ============================================================
+2026-07-06 04:42:22,733 | INFO | Start przetwarzania - 2026-07-06T04:42:22.733140
+2026-07-06 04:42:22,735 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 04:42:23,491 | INFO | Sprawdzam pocztę nowszą niż UID 9736
+2026-07-06 04:42:24,204 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9736)
+2026-07-06 04:42:24,344 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (2 kandydatów)
+2026-07-06 04:42:24,344 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 0. Łącznie w bazie: 2
+2026-07-06 05:30:24,431 | INFO | ============================================================
+2026-07-06 05:30:24,431 | INFO | Start przetwarzania - 2026-07-06T05:30:24.431625
+2026-07-06 05:30:24,434 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 05:30:25,137 | INFO | Sprawdzam pocztę nowszą niż UID 9736
+2026-07-06 05:30:25,470 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9736)
+2026-07-06 05:30:25,553 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (2 kandydatów)
+2026-07-06 05:30:25,553 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 0. Łącznie w bazie: 2
+2026-07-06 05:49:29,884 | INFO | ============================================================
+2026-07-06 05:49:29,884 | INFO | Start przetwarzania - 2026-07-06T05:49:29.884733
+2026-07-06 05:49:29,887 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 05:49:30,214 | INFO | Sprawdzam pocztę nowszą niż UID 9736
+2026-07-06 05:49:30,692 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9736)
+2026-07-06 05:49:31,102 | INFO | Pobrano z IMAP: UID=9737 | temat: 'Podanie o prace' | od: 'Maksymilian Nowak <mangomusztarda676969@gmail.com>' | załączników CV: 1
+2026-07-06 05:49:31,266 | INFO | Nowy e-mail od Maksymilian Nowak <mangomusztarda676969@gmail.com> | temat: Podanie o prace | załączników CV: 1
+2026-07-06 05:49:31,324 | INFO | Sprawdzanie i ocena przez AI: Dokument bez tytułu.pdf
+2026-07-06 05:49:36,281 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-06 05:49:36,287 | INFO | Dodano kandydata: Jan Kowalski | ocena: 96
+2026-07-06 05:49:36,297 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (3 kandydatów)
+2026-07-06 05:49:36,298 | ERROR | Nie udało się zaktualizować Google Sheets (lokalny Excel nadal jest aktualny): [Errno 2] No such file or directory: 'C:\\Users\\nowma\\Desktop\\Sranie w banie\\cv-bot\\cv-bot\\config\\google_credentials.json'
+2026-07-06 05:49:36,298 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 1. Łącznie w bazie: 3
+2026-07-06 06:02:51,410 | INFO | ============================================================
+2026-07-06 06:02:51,411 | INFO | Start przetwarzania - 2026-07-06T06:02:51.411275
+2026-07-06 06:02:51,415 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 06:02:51,807 | INFO | Sprawdzam pocztę nowszą niż UID 9737
+2026-07-06 06:02:52,163 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9737)
+2026-07-06 06:02:52,248 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (2 kandydatów)
+2026-07-06 06:02:52,248 | ERROR | Nie udało się zaktualizować Google Sheets (lokalny Excel nadal jest aktualny): [Errno 2] No such file or directory: 'C:\\Users\\nowma\\Desktop\\Sranie w banie\\cv-bot\\cv-bot\\config\\google_credentials.json'
+2026-07-06 06:02:52,248 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 0. Łącznie w bazie: 2
+2026-07-06 07:34:55,588 | INFO | ============================================================
+2026-07-06 07:34:55,588 | INFO | Start przetwarzania - 2026-07-06T07:34:55.588249
+2026-07-06 07:34:55,590 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 07:34:56,893 | INFO | Sprawdzam pocztę nowszą niż UID 9737
+2026-07-06 07:34:57,272 | INFO | Znaleziono 2 nowych wiadomości do sprawdzenia (od UID 9737)
+2026-07-06 07:34:57,566 | INFO | Pobrano z IMAP: UID=9738 | temat: 'Aktualizacja warunków korzystania – link do wyrażenia zgody' | od: '"Vorwerk Cookidoo®" <thermomix@info.pl.vorwerk.com>' | załączników CV: 0
+2026-07-06 07:34:57,873 | INFO | Pobrano z IMAP: UID=9739 | temat: 'dddd' | od: 'Maksymilian Nowak <mangomusztarda676969@gmail.com>' | załączników CV: 1
+2026-07-06 07:34:57,993 | INFO | Nowy e-mail od "Vorwerk Cookidoo®" <thermomix@info.pl.vorwerk.com> | temat: Aktualizacja warunków korzystania – link do wyrażenia zgody | załączników CV: 0
+2026-07-06 07:34:58,015 | INFO | Nowy e-mail od Maksymilian Nowak <mangomusztarda676969@gmail.com> | temat: dddd | załączników CV: 1
+2026-07-06 07:34:58,043 | INFO | Sprawdzanie i ocena przez AI: Szymon Mrowiński CV123456.pdf
+2026-07-06 07:35:03,741 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-06 07:35:03,757 | INFO | Dodano kandydata: Szymon Mrowiński | ocena: 3
+2026-07-06 07:35:03,779 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (1 kandydatów)
+2026-07-06 07:35:03,779 | ERROR | Nie udało się zaktualizować Google Sheets (lokalny Excel nadal jest aktualny): [Errno 2] No such file or directory: 'C:\\Users\\nowma\\Desktop\\Sranie w banie\\cv-bot\\cv-bot\\config\\google_credentials.json'
+2026-07-06 07:35:03,779 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 1. Łącznie w bazie: 1
+2026-07-06 09:08:04,732 | INFO | ============================================================
+2026-07-06 09:08:04,732 | INFO | Start przetwarzania - 2026-07-06T09:08:04.732586
+2026-07-06 09:08:04,735 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 09:08:05,099 | INFO | Sprawdzam pocztę nowszą niż UID 9739
+2026-07-06 09:08:05,474 | INFO | Znaleziono 2 nowych wiadomości do sprawdzenia (od UID 9739)
+2026-07-06 09:08:05,804 | INFO | Pobrano z IMAP: UID=9740 | temat: 'Podanie o pracę ' | od: 'babeczka670@wp.pl <babeczka670@wp.pl>' | załączników CV: 1
+2026-07-06 09:08:06,353 | INFO | Pobrano z IMAP: UID=9741 | temat: 'Last Week | Summer Sale' | od: '"BESTSECRET" <noreply@fashionnews.bestsecret.com>' | załączników CV: 0
+2026-07-06 09:08:06,426 | INFO | Nowy e-mail od babeczka670@wp.pl <babeczka670@wp.pl> | temat: Podanie o pracę  | załączników CV: 1
+2026-07-06 09:08:06,429 | INFO | Sprawdzanie i ocena przez AI: cv_kamil_nowak.pdf
+2026-07-06 09:08:14,145 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-06 09:08:14,148 | ERROR | Model nie zwrócił poprawnego JSON: Expecting ',' delimiter: line 8 column 582 (char 748) | odpowiedź: {
+  "to_jest_cv": true,
+  "powod_jesli_nie_cv": null,
+  "imie_nazwisko": "Kamil Nowak",
+  "email": "kamil.nowak@email.com",
+  "telefon": "123 456 789",
+  "ocena": 28,
+  "podsumowanie": "Kandydat to freelancer z niewielkim, nieformalnym doświadczeniem w tworzeniu materiałów graficznych i prowadzeniu social media dla małych firm. Dopasowanie do stanowiska jest niskie - brakuje doświadczenia w analizie wyników (Google Analytics), content marketingu i copywritingu, a wykształcenie nie jest związane z marketingiem. Największym atutem jest praktyczna znajomość Canvy i podstaw social media, natomiast największym problemem jest brak mierzalnych osiągnięć oraz brak jakichkolwiek kompetencji analitycznych i formalnego przygotowania merytorycznego."],
+  "mocne_strony": [
+    "Znajomość Canvy do tworzenia materiałów graficznych",
+    "Podstawowe doświadczenie w prowadzeniu Facebooka i Instagrama",
+    "Doświadczenie w kontakcie z klientem",
+    "Zainteresowanie branżą marketingową"
+  ],
+  "slabe_strony": [
+    "Brak znajomości Google Analytics i umiejętności analitycznych",
+    "Brak doświadczenia w content marketingu/copywritingu",
+    "Wykształcenie niezwiązane z marketingiem (technikum ogólne)",
+    "Brak informacji o znajomości języka angielskiego",
+    "Brak konkretnych, mierzalnych osiągnięć w dotychczasowej pracy"
+  ]
+}
+2026-07-06 09:08:14,149 | INFO | Podejmowanie decyzji rekrutacyjnej: cv_kamil_nowak.pdf
+2026-07-06 09:08:16,371 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-06 09:08:16,385 | INFO | Dodano kandydata: None | ocena: 0
+2026-07-06 09:08:16,396 | INFO | Nowy e-mail od "BESTSECRET" <noreply@fashionnews.bestsecret.com> | temat: Last Week | Summer Sale | załączników CV: 0
+2026-07-06 09:08:16,412 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (2 kandydatów)
+2026-07-06 09:08:16,412 | ERROR | Nie udało się zaktualizować Google Sheets (lokalny Excel nadal jest aktualny): [Errno 2] No such file or directory: 'C:\\Users\\nowma\\Desktop\\Sranie w banie\\cv-bot\\cv-bot\\config\\google_credentials.json'
+2026-07-06 09:08:16,412 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 1. Łącznie w bazie: 2
+2026-07-06 09:37:02,048 | INFO | ============================================================
+2026-07-06 09:37:02,048 | INFO | Start przetwarzania - 2026-07-06T09:37:02.048440
+2026-07-06 09:37:02,050 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 09:37:02,431 | INFO | Sprawdzam pocztę nowszą niż UID 9741
+2026-07-06 09:37:02,824 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9741)
+2026-07-06 09:37:03,207 | INFO | Pobrano z IMAP: UID=9742 | temat: 'New seller message on 2026.07.06 03 AM' | od: '"feedback@service.alibaba.com" <feedback@service.alibaba.com>' | załączników CV: 0
+2026-07-06 09:37:03,284 | INFO | Nowy e-mail od "feedback@service.alibaba.com" <feedback@service.alibaba.com> | temat: New seller message on 2026.07.06 03 AM | załączników CV: 0
+2026-07-06 09:37:03,308 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (2 kandydatów)
+2026-07-06 09:37:03,308 | ERROR | Nie udało się zaktualizować Google Sheets (lokalny Excel nadal jest aktualny): [Errno 2] No such file or directory: 'C:\\Users\\nowma\\Desktop\\Sranie w banie\\cv-bot\\cv-bot\\config\\google_credentials.json'
+2026-07-06 09:37:03,308 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 0. Łącznie w bazie: 2
+2026-07-06 09:49:57,321 | INFO | ============================================================
+2026-07-06 09:49:57,321 | INFO | Start przetwarzania - 2026-07-06T09:49:57.321524
+2026-07-06 09:49:57,323 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 09:49:57,861 | INFO | Sprawdzam pocztę nowszą niż UID 9742
+2026-07-06 09:49:58,230 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9742)
+2026-07-06 09:49:58,313 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (2 kandydatów)
+2026-07-06 09:49:58,313 | ERROR | Nie udało się zaktualizować Google Sheets (lokalny Excel nadal jest aktualny): [Errno 2] No such file or directory: 'C:\\Users\\nowma\\Desktop\\Sranie w banie\\cv-bot\\cv-bot\\config\\google_credentials.json'
+2026-07-06 09:49:58,313 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 0. Łącznie w bazie: 2
+2026-07-06 09:54:03,001 | INFO | ============================================================
+2026-07-06 09:54:03,001 | INFO | Start przetwarzania - 2026-07-06T09:54:03.001410
+2026-07-06 09:54:03,003 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 09:54:03,343 | INFO | Sprawdzam pocztę nowszą niż UID 9742
+2026-07-06 09:54:03,699 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9742)
+2026-07-06 09:54:03,780 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (2 kandydatów)
+2026-07-06 09:54:03,780 | ERROR | Nie udało się zaktualizować Google Sheets (lokalny Excel nadal jest aktualny): [Errno 2] No such file or directory: 'C:\\Users\\nowma\\Desktop\\Sranie w banie\\cv-bot\\cv-bot\\config\\google_credentials.json'
+2026-07-06 09:54:03,780 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 0. Łącznie w bazie: 2
+2026-07-06 09:54:42,013 | INFO | ============================================================
+2026-07-06 09:54:42,013 | INFO | Start przetwarzania - 2026-07-06T09:54:42.013175
+2026-07-06 09:54:42,015 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 09:54:42,411 | INFO | Sprawdzam pocztę nowszą niż UID 9742
+2026-07-06 09:54:42,754 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9742)
+2026-07-06 09:54:42,835 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (2 kandydatów)
+2026-07-06 09:54:42,835 | ERROR | Nie udało się zaktualizować Google Sheets (lokalny Excel nadal jest aktualny): [Errno 2] No such file or directory: 'C:\\Users\\nowma\\Desktop\\Sranie w banie\\cv-bot\\cv-bot\\config\\google_credentials.json'
+2026-07-06 09:54:42,835 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 0. Łącznie w bazie: 2
+2026-07-06 09:56:24,604 | INFO | ============================================================
+2026-07-06 09:56:24,604 | INFO | Start przetwarzania - 2026-07-06T09:56:24.604859
+2026-07-06 09:56:24,607 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 09:56:24,985 | INFO | Sprawdzam pocztę nowszą niż UID 9742
+2026-07-06 09:56:25,338 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9742)
+2026-07-06 09:56:25,660 | INFO | Pobrano z IMAP: UID=9743 | temat: 'praca' | od: 'Maksymilian Nowak <mangomusztarda676969@gmail.com>' | załączników CV: 1
+2026-07-06 09:56:25,736 | INFO | Nowy e-mail od Maksymilian Nowak <mangomusztarda676969@gmail.com> | temat: praca | załączników CV: 1
+2026-07-06 09:56:25,739 | INFO | Sprawdzanie i ocena przez AI: cv_marketing.pdf
+2026-07-06 09:56:35,389 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-06 09:56:35,390 | INFO | Podejmowanie decyzji rekrutacyjnej: cv_marketing.pdf
+2026-07-06 09:56:41,778 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-06 09:56:41,793 | INFO | Dodano kandydata: Jan Kowalski | ocena: 78
+2026-07-06 09:56:41,812 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (3 kandydatów)
+2026-07-06 09:56:41,812 | ERROR | Nie udało się zaktualizować Google Sheets (lokalny Excel nadal jest aktualny): [Errno 2] No such file or directory: 'C:\\Users\\nowma\\Desktop\\Sranie w banie\\cv-bot\\cv-bot\\config\\google_credentials.json'
+2026-07-06 09:56:41,812 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 1. Łącznie w bazie: 3
+2026-07-06 10:00:30,017 | INFO | ============================================================
+2026-07-06 10:00:30,017 | INFO | Start przetwarzania - 2026-07-06T10:00:30.017794
+2026-07-06 10:00:30,020 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 10:00:30,519 | INFO | Sprawdzam pocztę nowszą niż UID 9743
+2026-07-06 10:00:30,898 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9743)
+2026-07-06 10:00:31,225 | INFO | Pobrano z IMAP: UID=9744 | temat: 'cv' | od: 'nowmaksymilian7x@wp.pl <nowmaksymilian7x@wp.pl>' | załączników CV: 1
+2026-07-06 10:00:31,297 | INFO | Nowy e-mail od nowmaksymilian7x@wp.pl <nowmaksymilian7x@wp.pl> | temat: cv | załączników CV: 1
+2026-07-06 10:00:31,300 | INFO | Sprawdzanie i ocena przez AI: CV_zarzadzanie_reklamami.pdf
+2026-07-06 10:00:40,870 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-06 10:00:40,872 | ERROR | Błąd podczas wywołania Anthropic API: 'typing.Union' object has no attribute '__discriminator__' and no __dict__ for setting new attributes
+2026-07-06 10:00:40,872 | INFO | Podejmowanie decyzji rekrutacyjnej: CV_zarzadzanie_reklamami.pdf
+2026-07-06 10:00:42,674 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-06 10:00:42,689 | INFO | Dodano kandydata: None | ocena: 0
+2026-07-06 10:00:42,707 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (3 kandydatów)
+2026-07-06 10:00:42,708 | ERROR | Nie udało się zaktualizować Google Sheets (lokalny Excel nadal jest aktualny): [Errno 2] No such file or directory: 'C:\\Users\\nowma\\Desktop\\Sranie w banie\\cv-bot\\cv-bot\\config\\google_credentials.json'
+2026-07-06 10:00:42,708 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 1. Łącznie w bazie: 3
+2026-07-06 10:03:51,660 | INFO | ============================================================
+2026-07-06 10:03:51,660 | INFO | Start przetwarzania - 2026-07-06T10:03:51.660143
+2026-07-06 10:03:51,662 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 10:03:52,052 | INFO | Sprawdzam pocztę nowszą niż UID 9744
+2026-07-06 10:03:52,412 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9744)
+2026-07-06 10:03:52,567 | INFO | Pobrano z IMAP: UID=9745 | temat: 'kdkda oqd ' | od: 'nowmaksymilian7x@wp.pl <nowmaksymilian7x@wp.pl>' | załączników CV: 1
+2026-07-06 10:03:52,684 | INFO | Nowy e-mail od nowmaksymilian7x@wp.pl <nowmaksymilian7x@wp.pl> | temat: kdkda oqd  | załączników CV: 1
+2026-07-06 10:03:52,740 | INFO | Sprawdzanie i ocena przez AI: Mega cv.pdf
+2026-07-06 10:04:02,220 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-06 10:04:02,222 | INFO | Podejmowanie decyzji rekrutacyjnej: Mega cv.pdf
+2026-07-06 10:04:04,554 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-06 10:04:04,558 | INFO | Dodano kandydata: Jan Kowalski | ocena: 95
+2026-07-06 10:04:04,570 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (3 kandydatów)
+2026-07-06 10:04:04,571 | ERROR | Nie udało się zaktualizować Google Sheets (lokalny Excel nadal jest aktualny): [Errno 2] No such file or directory: 'C:\\Users\\nowma\\Desktop\\Sranie w banie\\cv-bot\\cv-bot\\config\\google_credentials.json'
+2026-07-06 10:04:04,571 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 1. Łącznie w bazie: 3
+2026-07-06 10:33:51,837 | INFO | ============================================================
+2026-07-06 10:33:51,837 | INFO | Start przetwarzania - 2026-07-06T10:33:51.837310
+2026-07-06 10:33:51,839 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 10:33:52,200 | INFO | Sprawdzam pocztę nowszą niż UID 9745
+2026-07-06 10:33:52,648 | INFO | Znaleziono 2 nowych wiadomości do sprawdzenia (od UID 9745)
+2026-07-06 10:33:52,977 | INFO | Pobrano z IMAP: UID=9746 | temat: 'Podanie o prace na stanowisko ' | od: 'nowmaksymilian7x@wp.pl <nowmaksymilian7x@wp.pl>' | załączników CV: 1
+2026-07-06 10:33:53,293 | INFO | Pobrano z IMAP: UID=9747 | temat: 'You have a promo! 🎉' | od: 'Uber <uber@uber.com>' | załączników CV: 0
+2026-07-06 10:33:53,415 | INFO | Nowy e-mail od nowmaksymilian7x@wp.pl <nowmaksymilian7x@wp.pl> | temat: Podanie o prace na stanowisko  | załączników CV: 1
+2026-07-06 10:33:53,415 | INFO | Pomijam duplikat CV: cv_marketing.pdf (już wcześniej ocenione)
+2026-07-06 10:33:53,420 | INFO | Nowy e-mail od Uber <uber@uber.com> | temat: You have a promo! 🎉 | załączników CV: 0
+2026-07-06 10:33:53,430 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (3 kandydatów)
+2026-07-06 10:33:53,430 | ERROR | Nie udało się zaktualizować Google Sheets (lokalny Excel nadal jest aktualny): [Errno 2] No such file or directory: 'C:\\Users\\nowma\\Desktop\\Sranie w banie\\cv-bot\\cv-bot\\config\\google_credentials.json'
+2026-07-06 10:33:53,431 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 0. Łącznie w bazie: 3
+2026-07-06 11:03:51,966 | INFO | ============================================================
+2026-07-06 11:03:51,966 | INFO | Start przetwarzania - 2026-07-06T11:03:51.966844
+2026-07-06 11:03:51,969 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 11:03:52,359 | INFO | Sprawdzam pocztę nowszą niż UID 9747
+2026-07-06 11:03:55,486 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9747)
+2026-07-06 11:03:55,944 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (3 kandydatów)
+2026-07-06 11:03:55,945 | ERROR | Nie udało się zaktualizować Google Sheets (lokalny Excel nadal jest aktualny): [Errno 2] No such file or directory: 'C:\\Users\\nowma\\Desktop\\Sranie w banie\\cv-bot\\cv-bot\\config\\google_credentials.json'
+2026-07-06 11:03:55,945 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 0. Łącznie w bazie: 3
+2026-07-06 11:33:52,071 | INFO | ============================================================
+2026-07-06 11:33:52,071 | INFO | Start przetwarzania - 2026-07-06T11:33:52.071384
+2026-07-06 11:33:52,073 | INFO | Słowa kluczowe używane do filtrowania załączników: ['cv', 'resume', 'życiorys', 'zyciorys', 'aplikacja', 'prace', 'praca']
+2026-07-06 11:33:52,742 | INFO | Sprawdzam pocztę nowszą niż UID 9747
+2026-07-06 11:33:53,122 | INFO | Znaleziono 1 nowych wiadomości do sprawdzenia (od UID 9747)
+2026-07-06 11:33:53,376 | INFO | Pobrano z IMAP: UID=9748 | temat: "We've  missed you ❤️" | od: 'Alibaba <noreply@member.alibaba.com>' | załączników CV: 0
+2026-07-06 11:33:53,454 | INFO | Nowy e-mail od Alibaba <noreply@member.alibaba.com> | temat: We've  missed you ❤️ | załączników CV: 0
+2026-07-06 11:33:53,469 | INFO | Zapisano plik Excel: C:\Users\nowma\Desktop\Sranie w banie\cv-bot\cv-bot\data\candidates.xlsx (3 kandydatów)
+2026-07-06 11:33:53,469 | ERROR | Nie udało się zaktualizować Google Sheets (lokalny Excel nadal jest aktualny): [Errno 2] No such file or directory: 'C:\\Users\\nowma\\Desktop\\Sranie w banie\\cv-bot\\cv-bot\\config\\google_credentials.json'
+2026-07-06 11:33:53,469 | INFO | Zakończono. Nowych kandydatów w tym przebiegu: 0. Łącznie w bazie: 3

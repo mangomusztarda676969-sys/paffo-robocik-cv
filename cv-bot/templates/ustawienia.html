@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% block title %}Ustawienia - Paffo AI{% endblock %}
+{% block content %}
+
+{% set wymagania = criteria.get('wymagania', {}) %}
+{% set stanowisko = criteria.get('stanowisko', {}) %}
+{% set ocena = criteria.get('ocena', {}) %}
+{% set umiejetnosci = wymagania.get('umiejetnosci_kluczowe', []) %}
+
+<form method="post" action="{{ url_for('ustawienia') }}">
+
+  <div class="card">
+    <h2>Skrzynka e-mail</h2>
+
+    <label>Dostawca poczty</label>
+    <select id="email_provider" onchange="onProviderChange()">
+      {% for key, label, host, port, help_url in email_providers %}
+      <option value="{{ key }}" data-server="{{ host }}" data-port="{{ port }}" data-help="{{ help_url }}"
+              {% if detected_provider == key %}selected{% endif %}>{{ label }}</option>
+      {% endfor %}
+      <option value="custom" {% if detected_provider == 'custom' %}selected{% endif %}>Inny / własny serwer firmowy</option>
+    </select>
+
+    <input type="hidden" name="imap_server" id="imap_server_field" value="{{ env.get('IMAP_SERVER', '') }}">
+    <input type="hidden" name="imap_port" id="imap_port_field" value="{{ env.get('IMAP_PORT', '993') }}">
+    <input type="hidden" name="imap_folder" value="{{ env.get('IMAP_FOLDER', 'INBOX') }}">
+
+    <div id="custom-server-block" style="{% if detected_provider != 'custom' %}display:none;{% endif %} margin-top:10px;">
+      <div class="row">
+        <div>
+          <label>Adres serwera IMAP</label>
+          <input type="text" id="imap_server_visible"
+                 value="{{ env.get('IMAP_SERVER', '') if detected_provider == 'custom' else '' }}"
+                 placeholder="np. mail.twojafirma.pl" oninput="syncCustomServer()">
+        </div>
+        <div>
+          <label>Port</label>
+          <input type="number" id="imap_port_visible" value="{{ env.get('IMAP_PORT', '993') }}" oninput="syncCustomServer()">
+        </div>
+      </div>
+      <p class="hint">Zapytaj dział IT/hosting firmy o adres serwera IMAP, jeśli go nie znasz.</p>
+    </div>
+
+    <label>Adres e-mail (login)</label>
+    <input type="text" name="imap_login" value="{{ env.get('IMAP_LOGIN', '') }}" placeholder="rekrutacja@firma.pl">
+
+    <label>Hasło / hasło aplikacji</label>
+    <input type="password" name="imap_password" placeholder="{% if has_imap_password %}•••••••• (ustawione - zostaw puste, aby nie zmieniać){% else %}nie ustawiono{% endif %}">
+    <p class="hint" id="password-help-known" style="{% if detected_provider == 'custom' %}display:none;{% endif %}">
+      Dla wielu skrzynek zwykłe hasło do konta nie zadziała - trzeba wygenerować osobne
+      "hasło aplikacji".
+      <a href="{{ initial_help_url }}" target="_blank" rel="noopener noreferrer" id="password-help-link">
+        Sprawdź, jak to zrobić dla wybranej skrzynki →
+      </a>
+    </p>
+    <p class="hint" id="password-help-custom" style="{% if detected_provider != 'custom' %}display:none;{% endif %}">
+      Zapytaj dział IT/hosting firmy, czy do logowania botem potrzebne jest specjalne
+      "hasło aplikacji", czy wystarczy zwykłe hasło do skrzynki.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Kryteria oceny CV</h2>
+
+    <label>Nazwa stanowiska</label>
+    <input type="text" name="stanowisko_nazwa" value="{{ stanowisko.get('nazwa', '') }}">
+
+    <label>Opis stanowiska</label>
+    <textarea name="stanowisko_opis">{{ stanowisko.get('opis', '') }}</textarea>
+
+    <label>Minimalne lata doświadczenia</label>
+    <input type="number" name="min_lata" value="{{ wymagania.get('minimalne_lata_doswiadczenia', 0) }}">
+
+    <label>Kluczowe umiejętności (nazwa + waga 1-5, im wyższa tym ważniejsza)</label>
+    <div id="skills-container">
+      {% for u in umiejetnosci %}
+      <div class="skills-row">
+        <input type="text" name="umiejetnosc_nazwa" value="{{ u.get('nazwa', '') }}" placeholder="np. Social media">
+        <input type="number" name="umiejetnosc_waga" value="{{ u.get('waga', 3) }}" min="1" max="5">
+        <button type="button" class="secondary" onclick="this.parentElement.remove()">Usuń</button>
+      </div>
+      {% endfor %}
+    </div>
+    <button type="button" class="secondary" onclick="addSkillRow()">+ Dodaj umiejętność</button>
+
+    <label>Preferowane wykształcenie (oddzielone przecinkami, zostaw puste jeśli bez znaczenia)</label>
+    <input type="text" name="wyksztalcenie" value="{{ wymagania.get('wyksztalcenie_preferowane', []) | join(', ') }}">
+
+    <label>Wymagane języki (oddzielone przecinkami)</label>
+    <input type="text" name="jezyki_wymagane" value="{{ wymagania.get('jezyki_wymagane', []) | join(', ') }}">
+
+    <label>Mile widziane języki (oddzielone przecinkami)</label>
+    <input type="text" name="jezyki_mile" value="{{ wymagania.get('jezyki_mile_widziane', []) | join(', ') }}">
+
+    <label>Próg auto-akceptacji (0-100)</label>
+    <input type="number" name="prog_rekomendacji" min="0" max="100" value="{{ ocena.get('prog_rekomendacji', 65) }}">
+    <p class="hint">Od tej oceny AI decyduje "zaprosić". To samo pole widać jako suwak w "Panelu sterowania AI" na Panelu głównym.</p>
+
+    <label>Siła filtrowania AI</label>
+    <select name="tryb_filtrowania">
+      {% set tryb_aktualny = ocena.get('tryb_filtrowania', 'zbalansowany') %}
+      <option value="rygorystyczny" {% if tryb_aktualny == 'rygorystyczny' %}selected{% endif %}>Rygorystyczny - ostrzej ocenia, w razie wątpliwości woli odrzucić</option>
+      <option value="zbalansowany" {% if tryb_aktualny == 'zbalansowany' %}selected{% endif %}>Zbalansowany - standardowe podejście</option>
+      <option value="eksploracyjny" {% if tryb_aktualny == 'eksploracyjny' %}selected{% endif %}>Eksploracyjny - łagodniej ocenia, daje margines zaufania</option>
+    </select>
+    <p class="hint">Realnie zmienia sposób, w jaki AI ocenia CV i podejmuje decyzję (nie tylko próg liczbowy).</p>
+
+    <label>Dodatkowe wskazówki dla AI</label>
+    <textarea name="wskazowki_dla_ai">{{ ocena.get('wskazowki_dla_ai', '') }}</textarea>
+  </div>
+
+  <details class="card">
+    <summary>Ustawienia zaawansowane (zwykle nie trzeba tego zmieniać)</summary>
+
+    <label>Słowa kluczowe w nazwie pliku / temacie maila (oddzielone przecinkami)</label>
+    <input type="text" name="attachment_keywords" value="{{ env.get('ATTACHMENT_KEYWORDS', 'cv,resume,życiorys,zyciorys,aplikacja') }}">
+    <p class="hint">Tylko załączniki, których nazwa LUB temat maila zawiera jedno z tych słów, trafiają do oceny AI.</p>
+
+    <label>Maks. liczba maili sprawdzanych w jednym uruchomieniu</label>
+    <input type="number" name="max_emails_per_run" value="{{ env.get('MAX_EMAILS_PER_RUN', '200') }}">
+    <p class="hint">Chroni przed bardzo długim przebiegiem przy skrzynce z tysiącami zaległych maili.</p>
+
+    <label>Google Sheets</label>
+    <div class="checkbox-row">
+      <input type="checkbox" id="google_sheets_enabled" name="google_sheets_enabled"
+             {% if env.get('GOOGLE_SHEETS_ENABLED', 'false').lower() == 'true' %}checked{% endif %}>
+      <label for="google_sheets_enabled">Włącz aktualizację arkusza Google Sheets</label>
+    </div>
+    <input type="text" name="google_sheets_spreadsheet_id" value="{{ env.get('GOOGLE_SHEETS_SPREADSHEET_ID', '') }}"
+           placeholder="ID arkusza z adresu URL">
+    <p class="hint">
+      Wymaga też pliku <code>config/google_credentials.json</code> - patrz README, sekcja "Google Sheets".
+    </p>
+  </details>
+
+  <button type="submit">Zapisz ustawienia</button>
+</form>
+
+<template id="skill-row-template">
+  <div class="skills-row">
+    <input type="text" name="umiejetnosc_nazwa" placeholder="np. Social media">
+    <input type="number" name="umiejetnosc_waga" value="3" min="1" max="5">
+    <button type="button" class="secondary" onclick="this.parentElement.remove()">Usuń</button>
+  </div>
+</template>
+
+<script>
+  function addSkillRow() {
+    const tpl = document.getElementById('skill-row-template');
+    const clone = tpl.content.cloneNode(true);
+    document.getElementById('skills-container').appendChild(clone);
+  }
+
+  function onProviderChange() {
+    const select = document.getElementById('email_provider');
+    const selectedOption = select.options[select.selectedIndex];
+    const customBlock = document.getElementById('custom-server-block');
+    const helpKnown = document.getElementById('password-help-known');
+    const helpCustom = document.getElementById('password-help-custom');
+
+    if (select.value === 'custom') {
+      customBlock.style.display = 'block';
+      syncCustomServer();
+      helpKnown.style.display = 'none';
+      helpCustom.style.display = 'block';
+    } else {
+      customBlock.style.display = 'none';
+      document.getElementById('imap_server_field').value = selectedOption.dataset.server;
+      document.getElementById('imap_port_field').value = selectedOption.dataset.port;
+      document.getElementById('password-help-link').href = selectedOption.dataset.help;
+      helpKnown.style.display = 'block';
+      helpCustom.style.display = 'none';
+    }
+  }
+
+  function syncCustomServer() {
+    document.getElementById('imap_server_field').value = document.getElementById('imap_server_visible').value.trim();
+    document.getElementById('imap_port_field').value = document.getElementById('imap_port_visible').value.trim() || '993';
+  }
+</script>
+
+{% endblock %}
